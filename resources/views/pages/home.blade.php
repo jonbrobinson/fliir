@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="top-section row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12">
             <div class="top-section-title">
             </div>
             <div class="embed-responsive embed-responsive-16by9">
