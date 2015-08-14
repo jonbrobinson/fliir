@@ -15,3 +15,8 @@ Route::get('/',[
     'as' => 'home',
     "uses" => "HomeController@index"
 ]);
+
+Route::get('/events',[
+    'as' => 'events',
+    "uses" => "EventsController@index"
+]);
