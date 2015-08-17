@@ -44,4 +44,11 @@ class EventRepository
         $response = $this->client->send($request, $options);
         return $response->getBody()->getContents();
     }
+
+    public function yes()
+    {
+        $test = true;
+
+        return $test;
+    }
 }
