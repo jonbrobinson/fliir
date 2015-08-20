@@ -24,9 +24,8 @@ class EventsController extends Controller
     public function index()
     {
         $output = $this->event->getAll();
-        $new = json_decode(json_encode($output), true);
 
-        return view('pages.events', ["output" => $new]);
+        return view('pages.events', ["output" => $output]);
     }
 
     /**

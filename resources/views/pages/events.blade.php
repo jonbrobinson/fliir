@@ -6,6 +6,8 @@
         <h1>All Events</h1>
     </div>
     <div>
-        <p><?= $output ?></p>
+        @foreach($output['events'] as $event)
+            <h2>Name: <?= $event['name']['text']?></h2>
+        @endforeach
     </div>
 @stop

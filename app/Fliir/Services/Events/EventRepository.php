@@ -29,20 +29,26 @@ class EventRepository
 
     public function getAll()
     {
+
         $options = [
             "headers" => array(
                 "Authorization" => "Bearer " . $this->token,
-                "Content-Type" => "application/json"
+                "Content-Type"  => "application/json"
             ),
             "query" => array(
-                "venue.city" => "austin"
+                "q" => "denver",
+//                "popular"    => true
             )
         ];
         $url = 'https://www.eventbriteapi.com/v3/events/search/' ;
-        $request = new Request('GET', $url);
+        $request = new Request('GET', $url, $options);
 
-        $response = $this->client->send($request, $options);
-        return $response->getBody()->getContents();
+        $response = $this->client->send($request);
+        $json = $response->getBody()->getContents();
+
+        $contnets = json_decode($json, true);
+
+        return $contnets;
     }
 
     public function yes()
