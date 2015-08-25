@@ -13,6 +13,8 @@ use GuzzleHttp\Psr7\Request;
 
 class EventRepository
 {
+    const EVENTBRITE_API_BASE_URL = "https://www.eventbriteapi.com/v3";
+
     protected $client;
 
     /**
@@ -30,25 +32,29 @@ class EventRepository
     public function getAll()
     {
 
-        $options = [
-            "headers" => array(
-                "Authorization" => "Bearer " . $this->token,
-                "Content-Type"  => "application/json"
-            ),
-            "query" => array(
-                "q" => "denver",
-//                "popular"    => true
-            )
+        $headers = [
+            "Authorization" => "Bearer " . $this->token,
+            "Content-Type"  => "application/json"
         ];
-        $url = 'https://www.eventbriteapi.com/v3/events/search/' ;
-        $request = new Request('GET', $url, $options);
 
-        $response = $this->client->send($request);
+        $query = [
+            "token" => $this->token,
+            "q" => "denver",
+            "popular" => true
+        ];
+        $options = [
+            "query" => $query
+        ];
+
+        $url = self::EVENTBRITE_API_BASE_URL ."/events/search/" ;
+        $request = new Request('GET', $url);
+
+        $response = $this->client->send($request, $options);
         $json = $response->getBody()->getContents();
 
-        $contnets = json_decode($json, true);
+        $contents = json_decode($json, true);
 
-        return $contnets;
+        return $contents;
     }
 
     public function yes()
