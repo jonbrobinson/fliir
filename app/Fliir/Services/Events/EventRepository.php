@@ -39,8 +39,8 @@ class EventRepository
 
         $query = [
             "token" => $this->token,
-            "q" => "denver",
-            "popular" => true
+            "q" => "happy hour",
+            "venue.city" => "austin"
         ];
         $options = [
             "query" => $query
