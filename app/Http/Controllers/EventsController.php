@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Fliir\Services\Events\EventRepository;
-use GuzzleHttp\Psr7\Response;
-use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
 class EventsController extends Controller
 {
@@ -23,9 +20,9 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $output = $this->event->getAll();
+        $events = $this->event->getSome();
 
-        return view('pages.events', ["output" => $output]);
+        return view('pages.events', compact($events));
     }
 
     /**

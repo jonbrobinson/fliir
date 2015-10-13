@@ -8,6 +8,8 @@
 
 namespace App\Fliir\Services\Events;
 
+use App\Events;
+use Illuminate\Support\Facades\DB;
 use GuzzleHttp\Client as Guzzle;
 use GuzzleHttp\Psr7\Request;
 
@@ -56,6 +58,19 @@ class EventRepository
 
         return $contents;
     }
+
+    /**
+     *
+     */
+    public function getSome()
+    {
+
+        $events = Events::all();
+
+
+        return $events;
+    }
+
 
     public function yes()
     {

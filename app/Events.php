@@ -11,12 +11,12 @@ class Events extends Model
      *
      * @var string
      */
-    protected $table = 'Events';
+    protected $table = 'events';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['name', 'description', 'startDate'];
+    protected $fillable = ['event_id', 'title', 'description'];
 }
