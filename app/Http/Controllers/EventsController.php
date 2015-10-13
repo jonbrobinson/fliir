@@ -22,7 +22,7 @@ class EventsController extends Controller
     {
         $events = $this->event->getSome();
 
-        return view('pages.events', compact('events'));
+        return view('events.events', compact('events'));
     }
 
     /**
@@ -53,7 +53,11 @@ class EventsController extends Controller
      */
     public function show($id)
     {
-        //
+        $event = $this->event->getEvent($id);
+
+//        return view('pages.event', compact('event'));
+
+        return $event;
     }
 
     /**

@@ -71,6 +71,15 @@ class EventRepository
         return $events;
     }
 
+    /**
+     * @param string $id
+     */
+    public function getEvent($id)
+    {
+        $event = Events::find()->where('event_id');
+        return $event;
+    }
+
 
     public function yes()
     {
