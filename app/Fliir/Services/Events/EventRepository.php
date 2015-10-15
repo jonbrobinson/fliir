@@ -8,7 +8,7 @@
 
 namespace App\Fliir\Services\Events;
 
-use App\Events;
+use App;
 use Illuminate\Support\Facades\DB;
 use GuzzleHttp\Client as Guzzle;
 use GuzzleHttp\Psr7\Request;
@@ -65,7 +65,7 @@ class EventRepository
     public function getSome()
     {
 
-        $events = Events::all();
+        $events = App\Events::all();
 
 
         return $events;
@@ -76,7 +76,9 @@ class EventRepository
      */
     public function getEvent($id)
     {
-        $event = Events::find()->where('event_id');
+        $event = App\Events::where('event_id', $id)
+            ->get();
+
         return $event;
     }
 

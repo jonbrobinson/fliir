@@ -7,7 +7,7 @@
     </div>
     @foreach($events as $event )
         <div>
-            <h1>{{ $event->title }}</h1>
+            <h1><a href="{{ route('showEvent', [$event->event_id]) }}">{{ $event->title }}</a></h1>
             <div class="body">{{ $event->description }}</div>
 
         </div>

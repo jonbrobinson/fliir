@@ -22,4 +22,7 @@ Route::get('events',[
     "uses" => "EventsController@index"
 ]);
 
-Route::get('events/{id}', "EventsController@show");
+Route::get('events/{id}', [
+    'as' => 'showEvent',
+    "uses" => "EventsController@show"
+]);

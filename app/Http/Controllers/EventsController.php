@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Fliir\Services\Events\EventRepository;
-
+use App;
 use App\Http\Requests;
+use App\Fliir\Services\Events\EventRepository;
 
 class EventsController extends Controller
 {
@@ -55,9 +55,11 @@ class EventsController extends Controller
     {
         $event = $this->event->getEvent($id);
 
-//        return view('pages.event', compact('event'));
+        if (!$event) {
+            abort(404);
+        }
 
-        return $event;
+        return view('events.show', compact('event'));
     }
 
     /**
