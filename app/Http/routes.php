@@ -30,3 +30,16 @@ Route::get('events/{id}', [
     'as' => 'showEvent',
     "uses" => "EventsController@show"
 ]);
+
+Route::post('events', [
+    'as' => 'postEvent',
+    "uses" => "EventsController@store"
+]);
+
+/**
+ * Authentication
+ */
+Route::controllers([
+    "auth" => 'Auth\AuthController',
+    "password" => 'Auth\PasswordController'
+]);
