@@ -16,6 +16,10 @@ Route::get('/',[
     "uses" => "HomeController@index"
 ]);
 
+Route::get('/home', function () {
+    return view('pages.home');
+});
+
 Route::get('events/create', [
     'as' => 'createEvent',
     "uses" => "EventsController@create"
