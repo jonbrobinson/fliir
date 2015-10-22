@@ -23,8 +23,19 @@
 $factory->define(App\Events::class, function ($faker) {
     return [
         'event_id' => $faker->randomNumber(5),
+        'user_id' => $faker->numberBetween(1,50),
         'title'=> $faker->words(4, true),
         'description' => $faker->sentences(5, true)
+    ];
+
+});
+
+$factory->define(App\User::class, function ($faker) {
+    return [
+        'first_name' => $faker->firstName(),
+        'last_name'=> $faker->lastName(),
+        'email' => $faker->email,
+        'remember_token' => str_random(10)
     ];
 
 });
