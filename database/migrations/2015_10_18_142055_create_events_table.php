@@ -15,6 +15,7 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
             $table->string('event_id');
+            $table->integer('user_id')->unsigned();
             $table->string('title');
             $table->text('description');
 //            $table->string('twitter');
@@ -25,6 +26,11 @@ class CreateEventsTable extends Migration
 //            $table->string('startTime');
 //            $table->string('endTime');
             $table->timestamps();
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
         });
     }
 
