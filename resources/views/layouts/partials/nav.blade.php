@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="/">Fliir</a>
-            <a class="navbar-brand" href="#">About</a>
+            <a class="navbar-brand" href="/about">About</a>
             <a class="navbar-brand" href="/events">Events</a>
         </div>
 
