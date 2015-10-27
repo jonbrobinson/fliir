@@ -16,8 +16,8 @@
             </p>
 
             <p>
-                Fliir curates its content by searching the internet for great experiences and jobs for.
-                It is important that Events represent a certain mind set of truly enjoyable experiences.
+                Fliir curates its content by searching the internet for great experiences and jobs for its users.
+                It is important that Events represent a certain mind set of truly wanted experiences.
             </p>
         </div>
     </div>

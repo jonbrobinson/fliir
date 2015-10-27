@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App;
 use App\Http\Requests;
+use App\Http\Requests\EventRequest;
 use Illuminate\Http\Request;
 use App\Fliir\Services\Events\EventRepository;
 
@@ -39,11 +40,12 @@ class EventsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Requests $requests
-     *
+     * @param EventRequest $request
      * @return Response
+     * @internal param Requests $requests
+     *
      */
-    public function store(Request $request)
+    public function store(EventRequest $request)
     {
         $input = $request->all();
 
