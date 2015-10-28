@@ -62,15 +62,14 @@
                     <h2>When</h2>
 
                     <div class="form-group">
-                        <input type="text" id="datepicker" class="form-control">
+                        <label for="state">State: </label>
+                        <p></p><input type="text" id="datepicker" class="form-control">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Add Event</button>
                     </div>
                 </div>
             </div>
-
-
         </form>
     </div>
 @stop
