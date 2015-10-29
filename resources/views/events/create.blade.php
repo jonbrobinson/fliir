@@ -4,6 +4,7 @@
     <script src="{{ url("http://tinymce.cachefly.net/4.2/tinymce.min.js") }}"></script>
     <script>tinymce.init({selector:'textarea'});</script>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="{{ url("http://code.jquery.com/ui/1.11.4/jquery-ui.min.js") }}"></script>
     <script>
         $(function() {
@@ -61,9 +62,15 @@
 
                     <h2>When</h2>
 
-                    <div class="form-group">
-                        <label for="state">State: </label>
-                        <p></p><input type="text" id="datepicker" class="form-control">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="date">Date: </label>
+                            <p></p><input type="text" name="date" id="datepicker" class="form-control" value="{{ old('date') }}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="date">Date: </label>
+                            <p></p><input type="text" name="date" id="datepicker" class="form-control" value="{{ old('date') }}">
+                        </div>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Add Event</button>
