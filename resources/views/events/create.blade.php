@@ -8,7 +8,14 @@
     <script src="{{ url("http://code.jquery.com/ui/1.11.4/jquery-ui.min.js") }}"></script>
     <script>
         $(function() {
-            $( "#datepicker" ).datepicker({
+            $( "#datepicker-start" ).datepicker({
+                showWeek: true,
+                firstDay: 1
+            });
+        });
+
+        $(function() {
+            $( "#datepicker-end" ).datepicker({
                 showWeek: true,
                 firstDay: 1
             });
@@ -64,12 +71,45 @@
 
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="date">Date: </label>
-                            <p></p><input type="text" name="date" id="datepicker" class="form-control" value="{{ old('date') }}">
+                            <label for="date_start">Start Date: </label>
+                            <input type="text" name="date_start" id="datepicker-start" class="form-control" value="{{ old('date_start') }}">
                         </div>
+                        <div class="form-group col-md-3">
+                            <label for="time_start">Time: </label>
+                            <select name="ampm" class="form-control" id="ampm">
+                                @foreach($hours as $time)
+                                    <option value="{{ $time }}">{{ $time }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="ampm">AM/PM: </label>
+                            <select name="ampm" class="form-control" id="ampm">
+                                <option value="am">AM</option>
+                                <option value="pm">PM</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="date">Date: </label>
-                            <p></p><input type="text" name="date" id="datepicker" class="form-control" value="{{ old('date') }}">
+                            <label for="date-end">End Date: </label>
+                            <input type="text" name="date-end" id="datepicker-end" class="form-control" value="{{ old('date_end') }}">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="time_start">Time: </label>
+                            <select name="ampm" class="form-control" id="ampm">
+                                @foreach($hours as $time)
+                                    <option value="{{ $time }}">{{ $time }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="ampm">AM/PM: </label>
+                            <select name="ampm" class="form-control" id="ampm">
+                                <option value="am">AM</option>
+                                <option value="pm">PM</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">

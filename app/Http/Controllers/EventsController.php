@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App;
+use App\Fliir\Tools\Calendar;
 use App\Http\Requests;
 use App\Http\Requests\EventRequest;
 use Illuminate\Http\Request;
@@ -11,10 +12,16 @@ use App\Fliir\Services\Events\EventRepository;
 class EventsController extends Controller
 {
     protected $event;
+    protected $calendar;
 
-    public function __construct(EventRepository $event)
+    /**
+     * @param EventRepository $event
+     * @param Calendar $calendar
+     */
+    public function __construct(EventRepository $event, Calendar $calendar)
     {
         $this->event = $event;
+        $this->calendar = $calendar;
     }
     /**
      * Display a listing of the resource.
@@ -34,7 +41,9 @@ class EventsController extends Controller
      */
     public function create()
     {
-        return view('events.create');
+        $hours = $this->calendar->getTime12Hour();
+
+        return view('events.create', compact("hours"));
     }
 
     /**
