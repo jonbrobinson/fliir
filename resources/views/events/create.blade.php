@@ -36,13 +36,13 @@
                 <div class="col-md-8 col-md-offset-2">
                     <h2>What</h2>
                     <div class="row">
-                        <div class="form-group col-md-9">
+                        <div class="form-group col-md-8">
                             <label for="title">Title: </label>
                             <input type="text" id="title" name="title" class="form-control" value="{{ old('title') }}">
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-4">
                             <label for="photo">Flyer: </label>
-                            <input type="file" title=" " id="photo" name="photo" class="form-control" value="{{ old('photo') }}">
+                            <input type="file" id="photo" name="photo" class="form-control" value="{{ old('photo') }}">
                         </div>
                     </div>
 
@@ -64,8 +64,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="zipcode">Zipcode: </label>
-                        <input type="text" id="zipcode" name="zipcode" class="form-control" value="{{ old('zipcode') }}">
+                        <label for="zip">Zipcode: </label>
+                        <input type="text" id="zip" name="zip" class="form-control" value="{{ old('zip') }}">
                     </div>
 
                     <div class="form-group">
